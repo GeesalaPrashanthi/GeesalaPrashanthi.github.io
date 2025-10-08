@@ -1,38 +1,71 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Award, ExternalLink } from "lucide-react";
+import React, { useState } from "react";
+import { ExternalLink } from "lucide-react";
 
 interface Certificate {
   title: string;
   issuer: string;
   description: string;
   link?: string;
+  image?: string;
+  size?: string; // tailwind grid span classes
 }
 
 const certificates: Certificate[] = [
   {
     title: "Python for Everybody Specialization",
     issuer: "University of Michigan (Coursera)",
-    description: "Comprehensive Python programming course covering data structures, web scraping, and database management.",
-    link: "https://www.coursera.org/specializations/python",
+    description: "Specialization covering Python programming and data handling.",
+    link: "https://www.coursera.org/account/accomplishments/specialization/DYDTWZBXAWWV",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-2 md:row-span-2",
   },
   {
-    title: "Data Analysis with Python",
-    issuer: "IBM (Coursera)",
-    description: "Professional certification in data analysis techniques using Python libraries including Pandas, NumPy, and Matplotlib.",
-    link: "https://www.coursera.org/learn/data-analysis-with-python",
+  title: "Introduction to Big Data with Spark and Hadoop",
+  issuer: "IBM (Coursera)",
+  description: "Certificate in big data concepts and processing.",
+  link: "https://www.coursera.org/account/accomplishments/verify/S8PBLLHPANYG",
+  image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-2 md:row-span-1",
   },
   {
-    title: "Big Data with Spark and Hadoop",
-    issuer: "IBM (Coursera)",
-    description: "Certification in big data processing technologies, distributed computing, and large-scale data analytics.",
-    link: "https://www.coursera.org/learn/big-data-hadoop-spark",
+  title: "Data Analysis with Python",
+  issuer: "IBM (Coursera)",
+  description: "Data analysis techniques using Python libraries.",
+  link: "https://www.coursera.org/account/accomplishments/verify/EJ6AQV59UGR7",
+  image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-1 md:row-span-2",
   },
   {
-    title: "Machine Learning A-Z",
-    issuer: "Udemy",
-    description: "Complete machine learning bootcamp covering regression, classification, clustering, and deep learning algorithms.",
-    link: "https://www.udemy.com/course/machinelearning/",
+  title: "Agile Software Development",
+  issuer: "University of Minnesota (Coursera)",
+  description: "Foundations of agile methodologies and practices.",
+  link: "https://www.coursera.org/account/accomplishments/verify/YB42QLB59MKN",
+  image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-1 md:row-span-1",
+  },
+  {
+  title: "Cloud Computing Foundations",
+  issuer: "Duke University (Coursera)",
+  description: "Introduction to cloud computing concepts and services.",
+  link: "https://www.coursera.org/account/accomplishments/verify/GX5L55G5GXCA",
+  image: "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-2 md:row-span-1",
+  },
+  {
+  title: "Database Management Essentials",
+  issuer: "University of Colorado System (Coursera)",
+  description: "Core database concepts and SQL fundamentals.",
+  link: "https://www.coursera.org/account/accomplishments/verify/7VFG3PCVPZ2U",
+  image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-1 md:row-span-1",
+  },
+  {
+  title: "Introduction to Graph Theory",
+  issuer: "University of California San Diego (Coursera)",
+  description: "Foundational concepts in graph theory and applications.",
+  link: "https://www.coursera.org/account/accomplishments/verify/DJRJT9EWHLVM",
+  image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+    size: "md:col-span-1 md:row-span-1",
   },
 ];
 
@@ -47,43 +80,133 @@ const Certificates = () => {
           Continuous learning and professional development in data science
         </p>
         
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-          {certificates.map((cert, index) => (
-            <Card
-              key={index}
-              className="p-6 border border-border hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-card"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    {cert.title}
-                  </h3>
-                  <p className="text-sm text-primary font-medium mb-2">
-                    {cert.issuer}
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {cert.description}
-                  </p>
-                  
-                  {cert.link && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                        View Certificate
-                        <ExternalLink className="w-3 h-3 ml-2" />
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </Card>
-          ))}
+        {/* Horizontal snap carousel */}
+        <div className="max-w-6xl mx-auto relative py-6">
+          <button
+            aria-label="Scroll left"
+            onClick={() => {
+              const el = document.querySelector('#cert-carousel');
+              if (el) smoothScrollBy(el as HTMLElement, -320, 600);
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 p-3 sm:p-4 rounded-full shadow-lg z-10 text-2xl"
+          >
+            ‹
+          </button>
+
+          <div id="cert-carousel" className="overflow-x-auto scroll-smooth py-2 px-6">
+            <div className="flex gap-6 snap-x snap-mandatory">
+              {certificates.map((cert, index) => (
+                <CertificateCard cert={cert} key={index} />
+              ))}
+            </div>
+          </div>
+
+          <button
+            aria-label="Scroll right"
+            onClick={() => {
+              const el = document.querySelector('#cert-carousel');
+              if (el) smoothScrollBy(el as HTMLElement, 320, 600);
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 p-3 sm:p-4 rounded-full shadow-lg z-10 text-2xl"
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>
+  );
+};
+
+// helper: animate scroll by delta over duration (ms)
+function smoothScrollBy(el: HTMLElement | null, delta: number, duration = 600) {
+  if (!el) return;
+  const start = el.scrollLeft;
+  const end = start + delta;
+  const startTime = performance.now();
+
+  function step(now: number) {
+    const t = Math.min(1, (now - startTime) / duration);
+    // easeInOutQuad
+    const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    el.scrollLeft = Math.round(start + (end - start) * eased);
+    if (t < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+// Accessible certificate card with keyboard + mouse interactions
+const CertificateCard: React.FC<{ cert: Certificate }> = ({ cert }) => {
+  const [flipped, setFlipped] = useState(false);
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setFlipped((s) => !s);
+    }
+  };
+
+  return (
+    <div
+      className="flex-none w-80 sm:w-96 snap-start relative"
+      tabIndex={0}
+      role="button"
+      aria-pressed={flipped}
+      aria-label={`View ${cert.title} by ${cert.issuer}`}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+      onFocus={() => setFlipped(true)}
+      onBlur={() => setFlipped(false)}
+      onKeyDown={onKeyDown}
+    >
+      <div
+        className="w-full h-56 sm:h-64 rounded-lg overflow-hidden shadow-md relative"
+        style={{ perspective: 1000 }}
+      >
+        <div
+          className="relative w-full h-full transition-transform duration-700"
+          style={{ transformStyle: "preserve-3d", transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
+        >
+          {/* front face */}
+          <div className="absolute inset-0" style={{ backfaceVisibility: "hidden" }}>
+            <img
+              src={cert.image}
+              alt={cert.title}
+              className="w-full h-full object-cover blur-[4px] brightness-90"
+            />
+            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+              <div className="text-white text-lg font-bold drop-shadow-md">{cert.title}</div>
+              <div className="text-white/80 text-sm mt-2">{cert.issuer}</div>
+            </div>
+          </div>
+
+          {/* back face */}
+          <div
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
+          >
+            {/* render same background on back face so flip preserves image */}
+            <img
+              src={cert.image}
+              alt={cert.title}
+              className="absolute inset-0 w-full h-full object-cover blur-[4px] brightness-90"
+              style={{ objectPosition: 'center' as const }}
+            />
+            <div className="absolute inset-0 bg-black/30"></div>
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-gray-800 bg-white/80 px-4 py-2 rounded opacity-90 flex items-center gap-2"
+            >
+              View Certificate
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -18,31 +18,17 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Amazon BI Dashboard Suite",
-    description: "Developed comprehensive QuickSight dashboards tracking 24+ metrics for delivery campaigns and consolidated 4 ABPL products with 15+ KPIs, improving cross-team decision-making efficiency by 10%.",
-    techStack: ["QuickSight", "SQL", "Python", "AWS"],
-    image: project1,
+    title: "Customer Churn Prediction",
+    description: `Built a machine learning model to predict customer churn using classification algorithms (Logistic Regression, XGBoost).\n\nConducted feature engineering and exploratory data analysis (EDA) on customer behavior data to identify churn drivers.\n\nAchieved ~85% accuracy, enabling proactive retention strategies through data-driven insights.`,
+  techStack: ["Python", "XGBoost", "Logistic Regression", "Pandas", "Scikit-learn"],
+  image: "https://www.rulex.ai/wp-content/uploads/2022/10/predicting-customer-churn-machinelearning.png",
     github: "https://github.com/prashanthigeesala",
   },
   {
-    title: "Customer Segmentation ML Model",
-    description: "Applied statistical analysis and machine learning to identify customer acquisition issues, discovering 30% of customers affected by fatigue and cannibalization patterns in EU SBCC Credit card campaigns.",
-    techStack: ["Python", "Scikit-learn", "Pandas", "Statistical Analysis"],
-    image: project2,
-    github: "https://github.com/prashanthigeesala",
-  },
-  {
-    title: "B2B Invoicing Data Mart",
-    description: "Designed end-to-end data mart for B2B invoicing KPIs supporting Pay by Invoicing for Amazon Business, eliminating 5 redundant reports and automating processes to save 0.8HC per year.",
-    techStack: ["SQL", "Python", "ETL", "Data Modeling"],
-    image: project3,
-    github: "https://github.com/prashanthigeesala",
-  },
-  {
-    title: "Big Data Analytics Pipeline",
-    description: "Built scalable ETL pipelines processing large-scale datasets using Hadoop and Spark, reducing reporting latency by 12% while ensuring data quality and real-time insights delivery.",
-    techStack: ["Hadoop", "Spark", "Python", "SQL"],
-    image: project4,
+    title: "Sales Forecasting / Demand Prediction",
+    description: `Developed a sales forecasting model using ARIMA and Prophet to predict future demand and seasonal trends.\n\nPerformed time series analysis and visualization to uncover sales patterns and key performance indicators.\n\nImproved forecasting accuracy by 20%, supporting strategic planning and inventory optimization.`,
+    techStack: ["ARIMA", "Prophet", "Time Series", "Python", "Tableau", "Looker"],
+  image: "https://hptpedia.hyper-trade.com/content/images/size/w1600/2023/08/Sales-forecast.jpg",
     github: "https://github.com/prashanthigeesala",
   },
 ];
@@ -68,7 +54,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -90,11 +76,11 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-3">
+                <div className="flex gap-3 justify-center">
                   {project.github && (
-                    <Button variant="outline" size="sm" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
+                    <Button className="bg-primary text-white hover:bg-primary/90" size="sm" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3">
+                        <Github className="w-4 h-4" />
                         GitHub
                       </a>
                     </Button>

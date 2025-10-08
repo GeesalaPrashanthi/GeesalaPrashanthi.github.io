@@ -55,7 +55,7 @@ const Hero = () => {
             </Button>
             <Button size="lg" variant="outline" className="border-2">
               <Linkedin className="w-4 h-4 mr-2" />
-              <a href="https://linkedin.com/in/prashanthi-geesala" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/prashanthi-geesala-0495891bb/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </Button>

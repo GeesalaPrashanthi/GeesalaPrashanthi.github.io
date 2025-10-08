@@ -19,8 +19,8 @@ const achievements = [
   },
   {
     icon: Award,
-    title: "Event Management Lead",
-    description: "Led 6-member team and organized 17 seminars at ACM-GITAM",
+    title: "Nurture Tech Knight",
+    description: "Achieved 'Nurture Tech Knight' title in Cognizant's ReCogNurize 2.0 challenge.",
   },
 ];
 

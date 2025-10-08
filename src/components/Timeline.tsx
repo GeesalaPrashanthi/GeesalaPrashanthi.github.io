@@ -16,6 +16,10 @@ const timelineData: TimelineItem[] = [
     organization: "Boston University",
     location: "Massachusetts, US",
     period: "Sep 2025 – Present",
+  description: [
+      "Relevant coursework:",
+      "Tools for Data Science; Math for Data Science and Machine Learning; AI Ethics",
+    ],
   },
   {
     type: "experience",
@@ -55,14 +59,6 @@ const timelineData: TimelineItem[] = [
     ],
   },
   {
-    type: "education",
-    title: "B.Tech in Computer Science and Engineering",
-    organization: "GITAM University",
-    location: "Visakhapatnam, India",
-    period: "Jun 2019 – Apr 2023",
-    description: ["GPA: 9.63/10"],
-  },
-  {
     type: "experience",
     title: "Advisory Intern",
     organization: "Deloitte USI",
@@ -72,6 +68,28 @@ const timelineData: TimelineItem[] = [
       "Monitored network traffic using OSINT tools including VirusTotal, AbuseIPDB, and URLScan",
       "Investigated 10+ security incidents using Splunk and QRadar",
       "Completed training in email, network and endpoint security"
+    ],
+  },
+  {
+    type: "experience",
+    title: "Event Management Lead",
+    organization: "Association for Computing Machinery - GITAM",
+    location: "Visakhapatnam, India",
+    period: "Sep 2021 – Apr 2022",
+    description: [
+      "Planned and executed 17 technical seminars and workshops to boost student exposure to emerging CS topics and practical skills.",
+      "Led a 6-member operations team and coordinated logistics with 8 industry and academic speakers to deliver professional, well-attended events."
+    ],
+  },
+  {
+    type: "education",
+    title: "B.Tech in Computer Science and Engineering",
+    organization: "GITAM University",
+    location: "Visakhapatnam, India",
+    period: "Jun 2019 – Apr 2023",
+    description: [
+      "Relevant coursework:",
+      "Linear Algebra; Probability and Statistics; Numerical Methods; Data Science with Python; Database Management; Cryptography; Big Data; Artificial Intelligence; Cloud Computing; GPA: 9.63/10",
     ],
   },
 ];
