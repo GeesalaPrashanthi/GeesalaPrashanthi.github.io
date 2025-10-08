@@ -21,7 +21,7 @@ const Education = () => {
             <p className="mt-3 text-sm text-foreground">Relevant coursework:</p>
             <ul className="list-disc list-inside text-sm text-muted-foreground mt-2 space-y-1">
               <li>Math: Linear Algebra, Probability and Statistics, Numerical Methods</li>
-              <li>Data Science with Python</li>
+              <li>Data Structures with Python</li>
               <li>Database Management</li>
               <li>Cryptography</li>
               <li>Big Data</li>
