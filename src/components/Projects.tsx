@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
+import actOnMass from "@/assets/act-on-mass.webp";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 
@@ -19,17 +19,17 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Customer Churn Prediction",
-    description: `Built a machine learning model to predict customer churn using classification algorithms (Logistic Regression, XGBoost).\n\nConducted feature engineering and exploratory data analysis (EDA) on customer behavior data to identify churn drivers.\n\nAchieved ~85% accuracy, enabling proactive retention strategies through data-driven insights.`,
-  techStack: ["Python", "XGBoost", "Logistic Regression", "Pandas", "Scikit-learn"],
-  image: "https://www.rulex.ai/wp-content/uploads/2022/10/predicting-customer-churn-machinelearning.png",
-    github: "https://github.com/prashanthigeesala",
+    description: `Built a machine learning model to predict customer churn using classification algorithms and XGBoost. Conducted feature engineering and exploratory data analysis (EDA) on customer behavior data to identify key churn drivers. Achieved ~85% accuracy by optimizing model parameters and balancing class distribution. Designed visualizations to communicate churn patterns and customer segments effectively. Delivered actionable insights that supported proactive retention strategies.`,
+    techStack: ["Python", "XGBoost", "Classification", "Pandas", "Scikit-learn"],
+    image: "https://www.rulex.ai/wp-content/uploads/2022/10/predicting-customer-churn-machinelearning.png",
+    github: "https://github.com/GeesalaPrashanthi/Customer-churn-prediction",
   },
   {
-    title: "Sales Forecasting / Demand Prediction",
-    description: `Developed a sales forecasting model using ARIMA and Prophet to predict future demand and seasonal trends.\n\nPerformed time series analysis and visualization to uncover sales patterns and key performance indicators.\n\nImproved forecasting accuracy by 20%, supporting strategic planning and inventory optimization.`,
-    techStack: ["ARIMA", "Prophet", "Time Series", "Python", "Tableau", "Looker"],
-  image: "https://hptpedia.hyper-trade.com/content/images/size/w1600/2023/08/Sales-forecast.jpg",
-    github: "https://github.com/prashanthigeesala",
+    title: "Massachusetts Legislative Roll Call Analyses",
+    description: `Built a data pipeline to collect and clean Massachusetts legislative roll call votes.\n\nStructured datasets with bill names, amendments, legislators, and voting records.\n\nDocumented the full ETL and visualization process for reproducibility and stakeholder use.\n\n Next steps: Develop interactive Looker Studio dashboards to explore voting patterns, missed votes, and bill-level transparency.\n\nEnable filtering by topic, bill type, and legislator for detailed analysis.`,
+    techStack: ["Python", "Pandas", "ETL", "SQL", "Looker Studio", "Data Visualization"],
+    image: actOnMass,
+    github: "https://github.com/BU-Spark/ds-act-on-mass",
   },
 ];
 
