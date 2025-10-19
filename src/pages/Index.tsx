@@ -1,25 +1,23 @@
 import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { SkillsSection } from "@/components/SkillsSection";
-import { ExperienceSection } from "@/components/ExperienceSection";
-import { EducationSection } from "@/components/EducationSection";
-import { ContactSection } from "@/components/ContactSection";
+import { Hero } from "@/components/Hero";
+import { Experience } from "@/components/Experience";
+import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <EducationSection />
-        <ContactSection />
+        <Hero />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 };
