@@ -8,14 +8,14 @@ const projects = [
     title: "Customer Churn Prediction",
     description: `Built a machine learning model to predict customer churn using classification algorithms and XGBoost. Conducted feature engineering and exploratory data analysis (EDA) on customer behavior data to identify key churn drivers. Achieved ~85% accuracy by optimizing model parameters and balancing class distribution. Designed visualizations to communicate churn patterns and customer segments effectively. Delivered actionable insights that supported proactive retention strategies.`,
     techStack: ["Python", "XGBoost", "Classification", "Pandas", "Scikit-learn"],
-    image: "/src/images/churn_prediction.jpg",
+    image: "images/images/churn_prediction.jpg",
     github: "https://github.com/GeesalaPrashanthi/Customer-churn-prediction",
   },
   {
     title: "Massachusetts Legislative Roll Call Analyses (In Progress)",
     description: `Built a data pipeline to collect and clean Massachusetts legislative roll call votes. Structured datasets with bill names, amendments, legislators, and voting records. Documented the full ETL and visualization process for reproducibility and stakeholder use.\n\nNext steps: Develop interactive Looker Studio dashboards to explore voting patterns, missed votes, and bill-level transparency. Enable filtering by topic, bill type, and legislator for detailed analysis.`,
     techStack: ["Python", "Pandas", "ETL", "SQL", "Looker Studio", "Data Visualization"],
-    image: "/src/images/roll_call.png"
+    image: "images/images/roll_call.png"
     // github: "https://github.com/BU-Spark/ds-act-on-mass" // To be added later
   }
 ];
