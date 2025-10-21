@@ -86,11 +86,11 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 animate-fade-in-up">
-            <h2 className="text-4xl font-bold">Experience</h2>
+            <h2 className="text-4xl font-bold">Professional Experience</h2>
             <p className="text-lg text-muted-foreground">
               Professional roles and projects I contributed to
             </p>

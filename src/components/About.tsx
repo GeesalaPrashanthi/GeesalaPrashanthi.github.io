@@ -1,9 +1,9 @@
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <section id="about" className="py-20 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold mb-8">About Me</h2>
+          <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">About Me</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             I'm a Data Scientist and Analyst with hands-on experience in transforming large-scale data into meaningful, actionable insights. My journey blends strong analytical foundations with real-world impact — from building scalable data pipelines and, optimize BI dashboards and business decisions, improve forecasting accuracy, and enhance customer retention from my experience at Amazon and Deloitte.
           </p>
