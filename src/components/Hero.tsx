@@ -33,7 +33,7 @@ export const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-accent opacity-20 blur-2xl animate-pulse" />
               <img
-                src="https://geesalaprashanthi.github.io/assets/profile-photo-Dur99tQj.jpg"
+                src="/src/images/profile_photo.png"
                 alt="Prashanthi Geesala"
                 className="relative w-56 h-56 rounded-full object-cover border-4 border-background shadow-glow"
               />
