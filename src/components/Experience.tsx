@@ -16,9 +16,7 @@ const experiences = [
       "Applied advanced statistical analysis to uncover that 30% of customers faced fatigue and cannibalization",
       "Integrated multi-product exposure data enabling marketing to analyze crossover impacts on user behavior",
       "Identified account ownership discrepancies affecting cashback, facilitating timely corrections with partners",
-      "Delivered actionable reports on promotional offers and delivery adoption to guide business strategy",
-      "Built marketing channel reports aggregating data across global marketplaces for executive reviews",
-      "Monitored competitor launches and advised marketing teams on optimizing customer targeting strategies"
+      "Built marketing channel reports aggregating data across global marketplaces for executive reviews"
     ]
   },
   {
@@ -30,7 +28,6 @@ const experiences = [
     points: [
       "Managed endpoint security tools across 15,000+ workstations and 3,000 servers to maintain security posture",
       "Reduced incident response time by 20% through deployment of proactive monitoring and alert systems",
-      "Coordinated patch management and vulnerability remediation to close security gaps efficiently",
       "Developed reports to track security incidents and system health metrics in real time",
       "Maintained compliance documentation to support audits and internal controls",
       "Assisted in delivering security awareness training to increase organizational cybersecurity readiness",
@@ -47,7 +44,6 @@ const experiences = [
       "Designed an end-to-end data mart for B2B invoicing KPIs, saving 0.8 HC per year in manual reporting",
       "Built efficient ETL pipelines and optimized data models using SQL and Python for faster processing",
       "Collaborated with business stakeholders to define and validate key invoicing metrics and reports",
-      "Ensured data quality through rigorous validation and consistency checks for reliable insights",
       "Developed interactive dashboards to translate complex data into user-friendly visualizations",
       "Documented data workflows and architecture to support scalability and maintenance"
     ]
@@ -63,7 +59,6 @@ const experiences = [
       "Investigated security incidents using Splunk and QRadar, supporting timely response",
       "Prepared detailed incident reports and documented findings for internal and client review",
       "Conducted vulnerability assessments to identify and help remediate network security weaknesses",
-      "Assisted senior analysts with malware analysis and cyber threat intelligence gathering",
       "Shared relevant threat information to enhance team awareness and response readiness"
     ]
   },
@@ -78,7 +73,6 @@ const experiences = [
       "Led a 3-member operations team and coordinated logistics with 8 industry and academic guest speakers",
       "Managed event budgeting and resource allocation to ensure seamless execution within constraints",
       "Created and implemented promotional campaigns to maximize student attendance and engagement",
-      "Established partnerships with external organizations to secure sponsorships and support",
       "Collected and analyzed post-event feedback to improve future seminar planning and delivery"
     ]
   }
@@ -105,8 +99,14 @@ export const Experience = () => {
               >
                 <CardContent className="p-6">
                   <div className="space-y-4">
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
+                    <div className="relative">
+                      <div className="absolute top-0 right-0">
+                        <p className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                          {exp.period}
+                        </p>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-2 pr-36">{exp.title}</h3>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
                           <Building2 className="h-4 w-4 text-primary" />
@@ -117,7 +117,6 @@ export const Experience = () => {
                           <p className="text-muted-foreground">{exp.location}</p>
                         </div>
                       </div>
-                      <p className="text-sm font-medium text-primary mt-2">{exp.period}</p>
                     </div>
 
                     <ul className="space-y-2">

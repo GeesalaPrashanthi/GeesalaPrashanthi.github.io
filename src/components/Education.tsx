@@ -17,7 +17,8 @@ const educationItems = [
     location: "Visakhapatnam, India",
     period: "Jun 2019 – Apr 2023",
     points: [
-      "Relevant coursework: Linear Algebra; Probability and Statistics; Numerical Methods; Data Science with Python; Database Management; Cryptography; Big Data; Artificial Intelligence; Cloud Computing; GPA: 9.63/10"
+      "Relevant coursework: Linear Algebra; Probability and Statistics; Numerical Methods; Data Science with Python; Database Management; Cryptography; Big Data; Artificial Intelligence; Cloud Computing",
+      "GPA: 9.63/10"
     ]
   }
 ];
