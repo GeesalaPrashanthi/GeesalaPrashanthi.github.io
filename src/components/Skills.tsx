@@ -1,33 +1,39 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Database, BarChart3, Wrench } from "lucide-react";
+import { useEffect, useRef } from "react";
 
-const skillCategories = [
-  {
-    category: "Programming & Scripting",
-    icon: Code2,
-    skills: ["Python", "R", "SQL", "JavaScript"]
-  },
-  {
-    category: "Data Science & ML",
-    icon: BarChart3,
-    skills: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost", "Pandas", "NumPy", "SciPy"]
-  },
-  {
-    category: "Visualization & BI",
-    icon: Database,
-    skills: ["Tableau", "Power BI", "QuickSight", "Looker Studio", "Matplotlib", "Seaborn", "Plotly"]
-  },
-  {
-    category: "Tools & Technologies",
-    icon: Wrench,
-    skills: ["Git", "Docker", "AWS", "Jupyter", "Apache Spark", "ETL", "Statistical Analysis"]
-  }
+const skills = [
+  "Python", "R", "SQL", "JavaScript", "Scikit-learn", "TensorFlow", 
+  "PyTorch", "XGBoost", "Pandas", "NumPy", "SciPy", "Tableau", 
+  "Power BI", "QuickSight", "Looker Studio", "Matplotlib", "Seaborn", 
+  "Plotly", "Git", "Docker", "AWS", "Jupyter", "Apache Spark", 
+  "ETL", "Statistical Analysis"
 ];
 
 export const Skills = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let animationId: number;
+    let scrollPosition = 0;
+
+    const scroll = () => {
+      scrollPosition += 0.5;
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      scrollContainer.scrollLeft = scrollPosition;
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
   return (
-    <section id="skills" className="py-20 bg-muted/30">
+    <section id="skills" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in-up">
@@ -37,38 +43,27 @@ export const Skills = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {skillCategories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <Card 
+          <div className="relative">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+            {/* Scrolling container */}
+            <div
+              ref={scrollRef}
+              className="flex gap-4 overflow-x-hidden py-8"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {/* Duplicate skills for seamless loop */}
+              {[...skills, ...skills].map((skill, index) => (
+                <div
                   key={index}
-                  className="shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border-2"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="flex-shrink-0 px-6 py-3 bg-card border-2 border-primary/20 rounded-full text-foreground font-medium hover:bg-primary/10 hover:border-primary transition-all duration-300 hover:scale-105 shadow-card"
                 >
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-semibold">{category.category}</h3>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, i) => (
-                        <Badge 
-                          key={i}
-                          variant="secondary"
-                          className="px-3 py-1.5 text-sm bg-background border-2 border-primary/20 hover:bg-primary/10 hover:border-primary transition-colors"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  {skill}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

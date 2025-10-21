@@ -45,9 +45,11 @@ export const Header = () => {
               e.preventDefault();
               scrollToSection("hero");
             }}
-            className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            className="flex items-center"
           >
-            Prashanthi Geesala
+            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              PG
+            </div>
           </a>
           <nav className="hidden md:flex items-center space-x-6">
             <a 
@@ -59,6 +61,16 @@ export const Header = () => {
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               Experience
+            </a>
+            <a 
+              href="#education" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("education");
+              }}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Education
             </a>
             <a 
               href="#projects" 
@@ -79,6 +91,26 @@ export const Header = () => {
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               Skills
+            </a>
+            <a 
+              href="#achievements" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("achievements");
+              }}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Achievements
+            </a>
+            <a 
+              href="#certificates" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("certificates");
+              }}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Certifications
             </a>
             <a 
               href="#contact" 
