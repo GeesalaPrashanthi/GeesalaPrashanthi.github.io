@@ -8,15 +8,15 @@ const projects = [
     title: "Customer Churn Prediction",
     description: `Built a machine learning model to predict customer churn using classification algorithms and XGBoost. Conducted feature engineering and exploratory data analysis (EDA) on customer behavior data to identify key churn drivers. Achieved ~85% accuracy by optimizing model parameters and balancing class distribution. Designed visualizations to communicate churn patterns and customer segments effectively. Delivered actionable insights that supported proactive retention strategies.`,
     techStack: ["Python", "XGBoost", "Classification", "Pandas", "Scikit-learn"],
-    image: "https://www.rulex.ai/wp-content/uploads/2022/10/predicting-customer-churn-machinelearning.png",
+    image: "/src/images/churn_prediction.jpg",
     github: "https://github.com/GeesalaPrashanthi/Customer-churn-prediction",
   },
   {
-    title: "Massachusetts Legislative Roll Call Analyses",
+    title: "Massachusetts Legislative Roll Call Analyses (In Progress)",
     description: `Built a data pipeline to collect and clean Massachusetts legislative roll call votes. Structured datasets with bill names, amendments, legislators, and voting records. Documented the full ETL and visualization process for reproducibility and stakeholder use.\n\nNext steps: Develop interactive Looker Studio dashboards to explore voting patterns, missed votes, and bill-level transparency. Enable filtering by topic, bill type, and legislator for detailed analysis.`,
     techStack: ["Python", "Pandas", "ETL", "SQL", "Looker Studio", "Data Visualization"],
-    image: "https://images.unsplash.com/photo-1555374018-13a8994ab246?w=800&q=80",
-    github: "https://github.com/BU-Spark/ds-act-on-mass",
+    image: "/src/images/roll_call.png",
+    github: "https://github.com/BU-Spark/ds-act-on-mass"
   }
 ];
 
@@ -71,21 +71,23 @@ export const Projects = () => {
                 </CardContent>
 
                 <CardFooter className="flex gap-3">
-                  <Button 
-                    variant="default"
-                    className="flex-1 gradient-primary shadow-md hover:shadow-glow"
-                    asChild
-                  >
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
+                  {project.github && (
+                    <Button 
+                      variant="default"
+                      className="flex-1 gradient-primary shadow-md hover:shadow-glow"
+                      asChild
                     >
-                      <Github className="h-4 w-4" />
-                      View on GitHub
-                    </a>
-                  </Button>
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <Github className="h-4 w-4" />
+                        View on GitHub
+                      </a>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             ))}
