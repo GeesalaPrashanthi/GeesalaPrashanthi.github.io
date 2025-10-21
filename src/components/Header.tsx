@@ -53,7 +53,17 @@ export const Header = () => {
           </a>
           <nav className="hidden md:flex items-center space-x-6">
             <a 
-              href="#experience" 
+              href="#about" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("about");
+              }}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a 
+              href="#experience"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("experience");
