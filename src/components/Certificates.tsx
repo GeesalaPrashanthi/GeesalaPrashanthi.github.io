@@ -15,49 +15,49 @@ const certificates: Certificate[] = [
     issuer: "University of Michigan (Coursera)",
     description: "Specialization covering Python programming and data handling",
     link: "https://www.coursera.org/account/accomplishments/specialization/DYDTWZBXAWWV",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/python_for_everybody.png",
   },
   {
     title: "Introduction to Big Data with Spark and Hadoop",
     issuer: "IBM (Coursera)",
     description: "Certificate in big data concepts and processing",
     link: "https://www.coursera.org/account/accomplishments/verify/S8PBLLHPANYG",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/big_data_with_spark_and_hadoop.png",
   },
   {
     title: "Data Analysis with Python",
     issuer: "IBM (Coursera)",
     description: "Data analysis techniques using Python libraries",
     link: "https://www.coursera.org/account/accomplishments/verify/EJ6AQV59UGR7",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/data_analysis_with_python.png",
   },
   {
     title: "Agile Software Development",
     issuer: "University of Minnesota (Coursera)",
     description: "Foundations of agile methodologies and practices",
     link: "https://www.coursera.org/account/accomplishments/verify/YB42QLB59MKN",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/agile_software_development.png",
   },
   {
     title: "Cloud Computing Foundations",
     issuer: "Duke University (Coursera)",
     description: "Introduction to cloud computing concepts and services",
     link: "https://www.coursera.org/account/accomplishments/verify/GX5L55G5GXCA",
-    image: "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/cloud_computing.png",
   },
   {
     title: "Database Management Essentials",
     issuer: "University of Colorado System (Coursera)",
     description: "Core database concepts and SQL fundamentals",
     link: "https://www.coursera.org/account/accomplishments/verify/7VFG3PCVPZ2U",
-    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/database_management_essentials.png",
   },
   {
     title: "Introduction to Graph Theory",
     issuer: "University of California San Diego (Coursera)",
     description: "Foundational concepts in graph theory and applications",
     link: "https://www.coursera.org/account/accomplishments/verify/DJRJT9EWHLVM",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+    image: "/src/images/introduction_to_graph_theory.png",
   },
 ];
 
@@ -119,34 +119,42 @@ const CertificateCard: React.FC<{ cert: Certificate }> = ({ cert }) => {
             <img
               src={cert.image}
               alt={cert.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover blur-[2px] brightness-85"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent backdrop-blur-[1px]"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-              <div className="text-white text-lg font-bold drop-shadow-md">
+              <div className="text-white text-xl font-bold drop-shadow-lg">
                 {cert.title}
               </div>
-              <div className="text-white/90 text-sm mt-2">{cert.issuer}</div>
+              <div className="text-white/90 text-base mt-2 font-medium">{cert.issuer}</div>
             </div>
           </div>
 
           {/* Back face */}
           <div
-            className="absolute inset-0 flex items-center justify-center bg-card"
+            className="absolute inset-0"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",
             }}
           >
-            <a
-              href={cert.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative text-primary-foreground bg-primary px-6 py-3 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity"
-            >
-              View Certificate
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <img
+              src={cert.image}
+              alt={cert.title}
+              className="w-full h-full object-cover blur-[2px] brightness-85"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent backdrop-blur-[1px]"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-white bg-primary/90 backdrop-blur-sm px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-primary transition-all duration-300 shadow-lg"
+              >
+                View Certificate
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

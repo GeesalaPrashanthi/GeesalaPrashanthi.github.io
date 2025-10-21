@@ -15,14 +15,14 @@ const projects = [
     title: "Massachusetts Legislative Roll Call Analyses (In Progress)",
     description: `Built a data pipeline to collect and clean Massachusetts legislative roll call votes. Structured datasets with bill names, amendments, legislators, and voting records. Documented the full ETL and visualization process for reproducibility and stakeholder use.\n\nNext steps: Develop interactive Looker Studio dashboards to explore voting patterns, missed votes, and bill-level transparency. Enable filtering by topic, bill type, and legislator for detailed analysis.`,
     techStack: ["Python", "Pandas", "ETL", "SQL", "Looker Studio", "Data Visualization"],
-    image: "/src/images/roll_call.png",
-    github: "https://github.com/BU-Spark/ds-act-on-mass"
+    image: "/src/images/roll_call.png"
+    // github: "https://github.com/BU-Spark/ds-act-on-mass" // To be added later
   }
 ];
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in-up">
