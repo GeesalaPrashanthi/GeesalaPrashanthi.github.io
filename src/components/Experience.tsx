@@ -26,12 +26,12 @@ const experiences = [
     location: "Hyderabad, India",
     period: "Oct 2023 – May 2024",
     points: [
-      "Managed endpoint security tools across 15,000+ workstations and 3,000 servers to maintain security posture",
-      "Reduced incident response time by 20% through deployment of proactive monitoring and alert systems",
-      "Developed reports to track security incidents and system health metrics in real time",
-      "Maintained compliance documentation to support audits and internal controls",
-      "Assisted in delivering security awareness training to increase organizational cybersecurity readiness",
-      "Supported rollout and configuration of advanced endpoint protection technologies across teams"
+      "Built an endpoint-risk scoring model using ensemble methods to identify high-risk devices",
+      "Engineered telemetry-based features like failure-rate trends, alert patterns to improve predictive accuracy",
+      "Addressed class imbalance with resampling and applied feature-importance analysis to interpret key drivers",
+      "Automated weekly batch inference pipelines to generate updated device-risk scores for operational teams",
+      "Designed scorecard-style dashboards enabling teams to prioritize risky endpoints and reduce manual triage time",
+      "Collaborated with cross-teams to align model outputs with upgrade planning and risk-reduction workflows"
     ]
   },
   {
