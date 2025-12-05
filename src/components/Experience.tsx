@@ -21,7 +21,7 @@ const experiences = [
   },
   {
     type: "work",
-    title: "Solution Delivery Analyst",
+    title: "Data Science Analyst (Endpoint Analytics)",
     organization: "Deloitte USI",
     location: "Hyderabad, India",
     period: "Oct 2023 – May 2024",
