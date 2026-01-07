@@ -90,11 +90,12 @@ export const Experience = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="relative space-y-6">
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
             {experiences.map((exp, index) => (
               <Card
                 key={index}
-                className="shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border-2"
+                className="shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border-2 relative z-10"
                 style={{ animationDelay: `${index * 0.06}s` }}
               >
                 <CardContent className="p-6">
@@ -105,7 +106,7 @@ export const Experience = () => {
                           {exp.period}
                         </p>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold mb-2 pr-36">{exp.title}</h3>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
