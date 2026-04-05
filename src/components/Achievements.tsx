@@ -19,8 +19,8 @@ const achievements = [
   },
   {
     icon: Award,
-    title: "Nurture Tech Knight",
-    description: "Achieved 'Nurture Tech Knight' title in Cognizant's ReCogNurize 2.0 challenge",
+    title: "CivicHacks 2026",
+    description: "Won CityHack Track (CyvlTech Data Challenge) and MLH Best Use of Gemini API for building a Streetscape Simulation tool using LiDAR and geospatial data to support smarter, more equitable city planning.",
   },
 ];
 

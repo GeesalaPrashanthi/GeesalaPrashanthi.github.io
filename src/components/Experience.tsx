@@ -21,17 +21,17 @@ const experiences = [
   },
   {
     type: "work",
-    title: "Data Scientist (Endpoint Security)",
+    title: "Solution Delivery Analyst (Endpoint Security)",
     organization: "Deloitte USI",
     location: "Hyderabad, India",
     period: "Oct 2023 – May 2024",
     points: [
-      "Built an endpoint-risk scoring model using ensemble methods to identify high-risk devices",
-      "Engineered telemetry-based features including failure-rate trends, and alert patterns to improve predictive accuracy",
-      "Addressed class imbalance with resampling and applied feature-importance analysis to interpret key drivers",
-      "Automated weekly batch inference pipelines to generate updated device-risk scores for operational teams",
-      "Designed scorecard-style dashboards enabling teams to prioritize risky endpoints and reduce manual triage time",
-      "Collaborated with cross-teams to align model outputs with upgrade planning and risk-reduction workflows"
+      "Administered CrowdStrike, Tanium, and Splunk across 15K+ workstations and 3K servers, ensuring compliance",
+      "Troubleshot system issues, identified root causes, and implemented fixes to improve system reliability",
+      "Reduced incident response time by 20% through proactive monitoring and optimization strategies",
+      "Enhanced security posture by streamlining monitoring processes and minimizing risk exposure",
+      "Built weekly reports to track upgrades and security tool installations for stakeholder visibility",
+      "Collaborated with cross-functional teams to support deployments and maintain operational efficiency"
     ]
   },
   {
